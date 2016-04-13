@@ -4,7 +4,7 @@ This is Moby’s set of frequently-used OpsWorks cookbooks. Each cookbook is a G
 To update the cookbooks to their latest versions:
 
 ```
-git submodule update
+git submodule update --remote
 ```
 
 ## Adding to OpsWorks
@@ -13,6 +13,24 @@ git submodule update
 3. Run the [Execute Recipes](http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html) command to run a recipe outside the usual lifecycle
 
 ## Cookbooks
+### [Redis](https://github.com/mobyinc/opsworks-redis)
+Installs redis, sets up a service to run the redis server, enables CloudWatch logging.
+
+Add these recipes to OpsWorks:
+
+* **Setup**: `redisio::cwlog_config`, `redisio::cwlogs_install`, `redisio::install`
+* **Shutdown**: `redisio::disable`
+
+Add custom JSON to point to the log file for CloudWatch:
+
+```json
+{
+  "cwlogs": {
+    "rails_log_path": "/srv/www/<your_app_name>/shared/log/production.log"
+  }
+}
+```
+
 ### [Sidekiq](https://github.com/drakerlabs/opsworks_sidekiq)
 Sets up Monit-monitored processes for Sidekiq workers.
 
