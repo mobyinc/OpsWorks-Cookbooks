@@ -4,3 +4,9 @@
 [submodule "redisio"]
 	path = redisio
 	url = git@github.com:brianbianco/redisio.git
+[submodule "chef-ulimit"]
+	path = chef-ulimit
+	url = git@github.com:bmhatfield/chef-ulimit.git
+[submodule "build-essential"]
+	path = build-essential
+	url = git@github.com:chef-cookbooks/build-essential.git
