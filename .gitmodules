@@ -1,9 +1,6 @@
 [submodule "opsworks_sidekiq"]
 	path = opsworks_sidekiq
 	url = git@github.com:drakerlabs/opsworks_sidekiq.git
-[submodule "redisio"]
-	path = redisio
-	url = git@github.com:brianbianco/redisio.git
 [submodule "chef-ulimit"]
 	path = ulimit
 	url = git@github.com:bmhatfield/chef-ulimit.git
@@ -19,3 +16,6 @@
 [submodule "chef_handler"]
 	path = chef_handler
 	url = git@github.com:chef-cookbooks/chef_handler.git
+[submodule "opsworks-redis"]
+	path = redisio
+	url = git@github.com:mobyinc/opsworks-redis.git
