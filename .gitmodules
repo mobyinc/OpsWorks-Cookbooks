@@ -10,3 +10,6 @@
 [submodule "build-essential"]
 	path = build-essential
 	url = git@github.com:chef-cookbooks/build-essential.git
+[submodule "seven_zip"]
+	path = seven_zip
+	url = git@github.com:daptiv/seven_zip.git
