@@ -44,7 +44,7 @@ Add these recipes to OpsWorks:
 
 Add custom JSON to the stack reflecting your desired config (see the cookbook’s README for more info):
 
-**<your_app_name> should match the name of the folder at `srv/www/<your_app_name>`.**
+**`<your_app_name>` should match the name of the folder at `srv/www/<your_app_name>`.**
 
 ```json
 {
