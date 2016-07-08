@@ -31,6 +31,17 @@ Add custom JSON to point to the log file for CloudWatch:
 }
 ```
 
+### [NodeJS](https://github.com/aws/opsworks-cookbooks/tree/release-chef-11.10/opsworks_nodejs)
+Adds Node
+
+```json
+{
+  "opsworks_nodejs": {
+    "version": "5.4.0"
+  }
+}
+```
+
 ### [Sidekiq](https://github.com/drakerlabs/opsworks_sidekiq)
 Sets up Monit-monitored processes for Sidekiq workers.
 
