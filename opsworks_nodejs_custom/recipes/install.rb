@@ -1,7 +1,5 @@
 include_recipe 'dependencies'
 
 node[:deploy].each do |application, deploy|
-  opsworks_nodejs do
-    deploy_data deploy
-  end
+  OpsWorks::NodejsConfiguration.npm_install(application, node[:deploy][application], release_path, node[:opsworks_nodejs][:npm_install_options])
 end
