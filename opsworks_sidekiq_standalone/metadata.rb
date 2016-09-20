@@ -3,11 +3,11 @@ maintainer_email "devops@drakerenergy.com"
 license          "MIT"
 description      "Configure and deploy sidekiq on opsworks."
 
-name   'opsworks_sidekiq'
-recipe 'opsworks_sidekiq::setup',     'Set up sidekiq worker.'
-recipe 'opsworks_sidekiq::configure', 'Configure sidekiq worker.'
-recipe 'opsworks_sidekiq::deploy',    'Deploy sidekiq worker.'
-recipe 'opsworks_sidekiq::undeploy',  'Undeploy sidekiq worker.'
-recipe 'opsworks_sidekiq::stop',      'Stop sidekiq worker.'
+name   'opsworks_sidekiq_standalone'
+recipe 'opsworks_sidekiq_standalone::setup',     'Set up sidekiq worker.'
+recipe 'opsworks_sidekiq_standalone::configure', 'Configure sidekiq worker.'
+recipe 'opsworks_sidekiq_standalone::deploy',    'Deploy sidekiq worker.'
+recipe 'opsworks_sidekiq_standalone::undeploy',  'Undeploy sidekiq worker.'
+recipe 'opsworks_sidekiq_standalone::stop',      'Stop sidekiq worker.'
 
 depends 'deploy'

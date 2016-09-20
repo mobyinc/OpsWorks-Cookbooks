@@ -10,7 +10,7 @@ node[:deploy].each do |application, deploy|
     path deploy[:deploy_to]
   end
 
-  include_recipe "opsworks_sidekiq::setup"
+  include_recipe "opsworks_sidekiq_standalone::setup"
 
   template "#{deploy[:deploy_to]}/shared/config/memcached.yml" do
     cookbook "rails"

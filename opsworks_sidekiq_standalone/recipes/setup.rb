@@ -1,6 +1,6 @@
 # Adapted from unicorn::rails: https://github.com/aws/opsworks-cookbooks/blob/master/unicorn/recipes/rails.rb
 
-include_recipe "opsworks_sidekiq::service"
+include_recipe "opsworks_sidekiq_standalone::service"
 
 # setup sidekiq service per app
 node[:deploy].each do |application, deploy|
