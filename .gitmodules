@@ -4,3 +4,6 @@
 [submodule "opsworks-redis"]
 	path = redisio
 	url = git@github.com:mobyinc/opsworks-redis.git
+[submodule "opsworks-sidekiq"]
+	path = opsworks-sidekiq
+	url = git@github.com:brainyatom/opsworks-sidekiq.git
