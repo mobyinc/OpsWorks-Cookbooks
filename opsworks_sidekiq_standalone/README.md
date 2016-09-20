@@ -1,4 +1,4 @@
-[opsworks_sidekiq](https://github.com/drakerlabs/opsworks_sidekiq)
+[opsworks_sidekiq_standalone](https://github.com/drakerlabs/opsworks_sidekiq_standalone)
 ====================
 
 This cookbook sets up an [AWS OpsWorks](http://aws.amazon.com/opsworks/) instance to run [sidekiq](http://sidekiq.org/) for a Rails application.
@@ -96,11 +96,11 @@ OpsWorks Set-Up
 
 The layer's custom chef recipes should be associated with events as follows:
 
-* **Setup**: `opsworks_sidekiq::setup`
-* **Configure**: `opsworks_sidekiq::configure`
-* **Deploy**: `opsworks_sidekiq::deploy`
-* **Undeploy**: `opsworks_sidekiq::undeploy`
-* **Shutdown**: `opsworks_sidekiq::stop`
+* **Setup**: `opsworks_sidekiq_standalone::setup`
+* **Configure**: `opsworks_sidekiq_standalone::configure`
+* **Deploy**: `opsworks_sidekiq_standalone::deploy`
+* **Undeploy**: `opsworks_sidekiq_standalone::undeploy`
+* **Shutdown**: `opsworks_sidekiq_standalone::stop`
 
 
 Logging
@@ -125,5 +125,5 @@ License
 
 See [LICENSE](LICENSE).
 
-Adaption to opsworks_sidekiq  &copy; 2013 Draker Inc.
+Adaption to opsworks_sidekiq_standalone  &copy; 2013 Draker Inc.
 Original opsworks_delayed_job &copy; 2013 Joey Aghion, Artsy Inc.
