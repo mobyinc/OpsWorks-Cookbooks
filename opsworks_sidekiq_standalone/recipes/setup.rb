@@ -68,5 +68,15 @@ node[:deploy].each do |application, deploy|
       notifies :reload, resources(:service => "monit"), :immediately
     end
 
+    template "#{node[:monit][:conf_dir]}/api.monitrc" do
+      mode 0644
+      source "api_monitrc.erb"
+      variables({
+        :deploy => deploy,
+        :application => application
+      })
+      notifies :reload, resources(:service => "monit"), :immediately
+    end
+
   end
 end
