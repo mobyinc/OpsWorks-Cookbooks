@@ -1,0 +1,1 @@
+This cookbook writes the attributes of a deploy's [Data Source](http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-data) to a JSON file in the `shared` directory.

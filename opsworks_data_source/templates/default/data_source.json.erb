@@ -1,0 +1,9 @@
+{
+  "provider": "<%= @database[:data_source_provider] %>",
+  "adapter": "<%= @database[:adapter] %>",
+  "encoding": "<%= @database[:encoding] %>",
+  "host": "<%= @database[:host] %>",
+  "username": "<%= @database[:username] %>",
+  "password": "<%= @database[:password] %>",
+  "reconnect": <%= @database[:reconnect] ? 'true' : 'false' %>
+}
