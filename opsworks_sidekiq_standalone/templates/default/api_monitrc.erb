@@ -3,6 +3,6 @@
 
 check process api
   with pidfile <%= pid_file %>
-  start program = "/bin/su - <%= @deploy[:user] %> -c 'cd <%= @deploy[:current_path] %>/jobs && <%= environment_variables %> bundle exec rackup -p 4567 -o 0.0.0.0 -P <%= pid_file %>" with timeout 90 seconds
+  start program = "/bin/su - <%= @deploy[:user] %> -c 'cd <%= @deploy[:current_path] %>/jobs && <%= environment_variables %> bundle exec rackup -p 4567 -o 0.0.0.0 -P <%= pid_file %>'" with timeout 90 seconds
   stop  program = "/bin/su - <%= @deploy[:user] %> -c 'kill -s TERM `cat <%= pid_file %>`'" with timeout 90 seconds
   group api_group
