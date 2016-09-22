@@ -3,6 +3,9 @@
 include_recipe "deploy"
 include_recipe "opsworks_sidekiq_standalone::service"
 
+# Craft needs this module -.-
+command 'php5enmod mcrypt'
+
 node[:deploy].each do |application, deploy|
   deploy = node[:deploy][application]
 
