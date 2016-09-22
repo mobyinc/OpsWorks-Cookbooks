@@ -26,4 +26,20 @@ node[:deploy].each do |application, deploy|
       File.exists?(deploy[:deploy_to]) && File.exists?("#{deploy[:deploy_to]}/shared/config/")
     end
   end
+
+  template "#{deploy[:deploy_to]}/shared/config/database.yml" do
+    source "database.yml.erb"
+    cookbook 'rails'
+    mode "0660"
+    group deploy[:group]
+    owner deploy[:user]
+    variables(
+      :environment => deploy[:rails_env],
+      :database => deploy[:database]
+    )
+
+    only_if do
+      File.exists?(deploy[:deploy_to]) && File.exists?("#{deploy[:deploy_to]}/shared/config/")
+    end
+  end
 end
