@@ -1,5 +1,5 @@
 <% pid_file = "#{@deploy[:deploy_to]}/shared/pids/#{@application}_api.pid" %>
-<% environment_variables = @applications[:environment_variables].map { |key, value| "#{key}=#{value}" }.join(' ') %>
+<% environment_variables = @application[:environment_variables].map { |key, value| "#{key}=#{value}" }.join(' ') %>
 
 check process <%= @application %>_api
   with pidfile <%= pid_file %>
