@@ -3,6 +3,7 @@
 
 check process <%= @application %>_api
   with pidfile <%= pid_file %>
-  start program = "/bin/su - <%= @deploy[:user] %> -c 'cd <%= @deploy[:current_path] %>/jobs && <%= environment_variables %> bundle exec rackup -p <%= @deploy[:environment_variables][:API_PORT] %> -o 0.0.0.0 -P <%= pid_file %>'" with timeout 90 seconds
-  stop  program = "/bin/su - <%= @deploy[:user] %> -c 'kill -s TERM `cat <%= pid_file %>`'" with timeout 90 seconds
-  group api_group
+  start program = "/bin/su - <%= @deploy[:user] %> -c 'cd <%= @deploy[:current_path] %>/jobs && <%= environment_variables %> bundle exec rackup -p <%= @deploy[:environment_variables][:API_PORT] %> -o 0.0.0.0 -P <%= pid_file %>'" with timeout 10 seconds
+  stop  program = "/bin/su - <%= @deploy[:user] %> -c 'kill -s TERM `cat <%= pid_file %>`'" with timeout 10 seconds
+  group <%= @application %>_group
+  if does not exist then start
