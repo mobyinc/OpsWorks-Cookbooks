@@ -7,3 +7,4 @@ check process <%= @application %>_api
   stop  program = "/bin/su - <%= @deploy[:user] %> -c 'kill -s TERM `cat <%= pid_file %>`'" with timeout 10 seconds
   group <%= @application %>
   if does not exist then start
+  if memory usage > 30% for 5 cycles then restart
