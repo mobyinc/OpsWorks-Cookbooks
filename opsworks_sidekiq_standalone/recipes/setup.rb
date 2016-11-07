@@ -22,7 +22,7 @@ node[:deploy].each do |application, deploy|
     variables :user => deploy[:user]
   end
 
-  if node[:sidekiq][application]
+  if node[:opsworks][:instance][:hostname] == 'utility' && node[:sidekiq][application]
 
     workers = node[:sidekiq][application].to_hash.reject {|k,v| k.to_s =~ /restart_command|syslog/ }
     config_directory = "#{deploy[:deploy_to]}/shared/config"
