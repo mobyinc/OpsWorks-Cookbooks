@@ -9,7 +9,7 @@
 
 check process sidekiq_<%= identifier %>
   with pidfile <%= pid_file %>
-  start program = "/bin/su - <%= @deploy[:user] %> -c 'cd <%= @deploy[:current_path] %>/jobs && <%= environment_variables %> bundle exec sidekiq -r <%= @deploy[:current_path] %>/jobs/app.rb -P <%= pid_file %> -L <%= @deploy[:current_path] %>/jobs/sidekiq.log'" with timeout 10 seconds
+  start program = "/bin/su - <%= @deploy[:user] %> -c 'cd <%= @deploy[:current_path] %>/jobs && <%= environment_variables %> bundle exec sidekiq -c 5 -r <%= @deploy[:current_path] %>/jobs/app.rb -P <%= pid_file %> -L <%= @deploy[:current_path] %>/jobs/sidekiq.log'" with timeout 10 seconds
   stop  program = "/bin/su - <%= @deploy[:user] %> -c 'kill -s TERM `cat <%= pid_file %>`'" with timeout 10 seconds
   group <%= @application %>
   if does not exist then start
