@@ -5,7 +5,7 @@
   <% pid_file = "#{@deploy[:deploy_to]}/shared/pids/sidekiq_#{identifier}.pid" %>
   <% syslog = @syslog ? "2>&1 | logger -t sidekiq-#{identifier}" : '' %>
 
-<% environment_variables = @deploy[:environment_variables].map { |key, value| "#{key}=#{value}" }.join(' ') %>
+<% environment_variables = @env.map { |key, value| "#{key}=#{value}" }.join(' ') %>
 
 check process sidekiq_<%= identifier %>
   with pidfile <%= pid_file %>

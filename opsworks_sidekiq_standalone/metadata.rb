@@ -11,3 +11,4 @@ recipe 'opsworks_sidekiq_standalone::undeploy',  'Undeploy sidekiq worker.'
 recipe 'opsworks_sidekiq_standalone::stop',      'Stop sidekiq worker.'
 
 depends 'deploy'
+depends 'rails'
