@@ -4,6 +4,7 @@ node[:deploy].each do |application, deploy|
 
   instance = search("aws_opsworks_instance", "self:true").first
   app = search("aws_opsworks_app").first
+  database = search("aws_opsworks_rds_db_instance").first
 
   # Allow deploy user to restart workers
   template "/etc/sudoers.d/#{deploy[:user]}" do
@@ -42,6 +43,19 @@ node[:deploy].each do |application, deploy|
         content yaml
       end
     end
+  end
+
+  template "#{config_directory}/database.yml" do
+    source "database.yml.erb"
+    mode "0660"
+    group deploy[:group]
+    owner deploy[:user]
+    variables(
+      :database => app['data_sources'][0]['database_name'],
+      :host => database['address'],
+      :username => database['db_user'],
+      :password => database['db_password']
+    )
   end
 
   if instance['hostname'] == 'utility' && node[:sidekiq][application]
