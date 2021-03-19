@@ -2,6 +2,7 @@ maintainer       "Draker"
 maintainer_email "devops@drakerenergy.com"
 license          "MIT"
 description      "Configure and deploy sidekiq on opsworks."
+version          "1.0.0"
 
 name   'opsworks_sidekiq_standalone'
 recipe 'opsworks_sidekiq_standalone::setup',     'Set up sidekiq worker.'
